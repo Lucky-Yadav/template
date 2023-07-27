@@ -377,6 +377,7 @@ export const ActivityHoursChartData = {
       },
       labels: {
         formatter: function (val) {
+          // eslint-disable-next-line
           return val + ' ' + 'Hr';
         },
         style: {
