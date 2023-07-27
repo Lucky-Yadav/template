@@ -23,6 +23,7 @@ import ComingBgVideo from "../Components/Pages/ComingSoon/ComingBgVideo";
 import Error500 from "../Components/Pages/ErrorPages/ErrorPage500";
 import Error503 from "../Components/Pages/ErrorPages/ErrorPage503";
 import ForgotPassword from "../Auth/Forgot_password";
+import LoginCallback from "../Auth/LoginCallback";
 
 export const authRoutes = [
   { path: `${process.env.PUBLIC_URL}/login`, Component: <Logins /> },
@@ -30,6 +31,9 @@ export const authRoutes = [
   {
     path: `${process.env.PUBLIC_URL}/forgot_password`,
     Component: <ForgotPassword />,
+  },{
+    path: `${process.env.PUBLIC_URL}/auth`,
+    Component: <LoginCallback />,
   },
   {
     path: `${process.env.PUBLIC_URL}/pages/authentication/login-simple/:layout`,

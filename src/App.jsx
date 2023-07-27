@@ -35,8 +35,7 @@ function App() {
       .post("/users/verify/token")
       .then((res) => {
         // Handle the response and redirect to the dashboard
-        console.log(res);
-        dispatch(sucessLogin(res.data));
+        dispatch(sucessLogin(res.data.user));
         console.log(res);
         localStorage.setItem("login", JSON.stringify(true));
         // history.push('/dashboard');

@@ -12,14 +12,15 @@ import {
   Follower,
   Following,
   LocationDetails,
-  MarekjecnoMailId,
-  MarkJecno,
   Location,
 } from "../../../Constant";
-import { useDispatch, useSelector } from "react-redux";
+import {  useSelector } from "react-redux";
 
 const UserProfile = () => {
   const [url, setUrl] = useState("");
+  const profile = JSON.parse(localStorage.getItem("Profile"));
+  const username = useSelector((state) => state.auth.UserName);
+  const UserEmail = useSelector((state) => state.auth.Email);
 
   const readUrl = (event) => {
     if (event.target.files.length === 0) return;
@@ -34,7 +35,7 @@ const UserProfile = () => {
       setUrl(reader.result);
     };
   };
-  const profile = useSelector((state) => state.auth.Profile);
+  // const profile = useSelector((state) => state.auth.Profile);
   return (
     <Fragment>
       <Col sm="12">
@@ -47,7 +48,8 @@ const UserProfile = () => {
                   className: "step1",
                   alt: "",
                   src: `${
-                    url ? url : require("../../../assets/images/user/7.jpg")
+                    url ? url : profile
+                    // profile
                   }`,
                 }}
               />
@@ -77,7 +79,7 @@ const UserProfile = () => {
                       <H6>
                         <i className="fa fa-envelope me-2"></i> {Email}
                       </H6>
-                      <span>{MarekjecnoMailId}</span>
+                      <span>{UserEmail}</span>
                     </div>
                   </Col>
                   <Col md="6">
@@ -95,7 +97,7 @@ const UserProfile = () => {
                 <div className="user-designation">
                   <div className="title">
                     <a target="_blank" href="#javascript">
-                      {profile}
+                      {username}
                     </a>
                   </div>
                   <div className="desc mt-2">{Designer}</div>

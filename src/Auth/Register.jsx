@@ -106,8 +106,11 @@ import { loginloading, sucessLogin } from "../store/auth/action";
 import { useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const RegisterFrom = () => {
+const RegisterFrom = () => {  
+  const history = useNavigate();
+
   const [otp_sent, setotp_sent] = useState(false);
   const token = useSelector((state) => state.auth.token);
 
@@ -172,10 +175,16 @@ const RegisterFrom = () => {
       data: verifyotp,
     })
       .then((res) => {
-        dispatch(sucessLogin(res.data));
+        dispatch(sucessLogin(res.data.user));
+        let token = res.data.token;
         //store the login data in localstorage
-        console.log(res);
-        localStorage.setItem("logindata", JSON.stringify(loginData));
+        // console.log(res.data);
+        let profile = res.data.user.Picture
+        console.log(profile)
+        localStorage.setItem("token", JSON.stringify(token));
+        localStorage.setItem("login", JSON.stringify(true));
+        localStorage.setItem("profile", JSON.stringify(true));
+        history(`${process.env.PUBLIC_URL}/dashboard/default/Seoul`);
 
         toast.success("Account Successfully Created...");
         console.log(res);

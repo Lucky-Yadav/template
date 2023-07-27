@@ -11,7 +11,7 @@ const OtherWay = () => {
       <div className="social my-4 ">
         <div className="btn-showcase">
           <Link
-            to={"http://localhost:3071/auth/google"}
+            to={"http://localhost:3071/oAuth/google"}
             className="btn btn-light"
           >
             <GoogleIcon className="txt-linkedin" />

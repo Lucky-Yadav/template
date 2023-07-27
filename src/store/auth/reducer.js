@@ -27,9 +27,11 @@ export const reducer = (state = init, { type, payload }) => {
         loading: false,
         error: false,
         ID: payload.ID,
-        token: payload.token,
-        UserName: payload.user.UserName,
-        Email: payload.user.Email,
+        token: payload.Token,
+        UserName: payload.UserName,
+        Email: payload.Email,
+        Picture: payload.Picture,
+        Verified: payload.Verified,
       };
     case LOGIN_ERROR:
       //When login fails, set error state to true

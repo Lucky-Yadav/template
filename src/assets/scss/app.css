@@ -605,6 +605,9 @@ progress {
 .blockquote > :last-child {
   margin-bottom: 0;
 }
+.profile_p1 {
+  height: 40px;
+}
 
 .blockquote-footer {
   margin-top: -1rem;

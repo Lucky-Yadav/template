@@ -4,9 +4,13 @@ import { H5, H4, H6, P, Image, Btn } from '../../../../AbstractElements';
 import { Link } from 'react-router-dom';
 import { MyProfile, Bio, Password, Website, Save, EmailAddress } from '../../../../Constant';
 import CustomizerContext from '../../../../_helper/Customizer';
+import {  useSelector } from "react-redux";
 
 const MyProfileEdit = () => {
   const { layoutURL } = useContext(CustomizerContext);
+  const profile = JSON.parse(localStorage.getItem("Profile"));
+  const username = useSelector((state) => state.auth.UserName);
+  const UserEmail = useSelector((state) => state.auth.Email);
   return (
     <Fragment>
       <Card>
@@ -26,12 +30,12 @@ const MyProfileEdit = () => {
             <Row className='mb-2'>
               <div className='profile-title'>
                 <div className='media'>
-                  <Image attrImage={{ className: 'img-70 m-0 rounded-circle', alt: '', src: `${require('../../../../assets/images/user/7.jpg')}` }} />
+                  <Image attrImage={{ className: 'img-70 m-0 rounded-circle', alt: '', src: `${profile}` }} />
                   <div className='media-body'>
                     <Link to={`${process.env.PUBLIC_URL}/app/users/userProfile/${layoutURL}`}>
-                      <H5 attrH5={{ className: 'mb-1' }}>MARK JECNO</H5>
+                      <H5 attrH5={{ className: 'mb-1' }}>{username}</H5>
                     </Link>
-                    <P>DESIGNER</P>
+                    <P>{UserEmail}</P>
                   </div>
                 </div>
               </div>

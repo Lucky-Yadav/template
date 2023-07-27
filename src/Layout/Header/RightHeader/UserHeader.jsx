@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LogIn, User, DollarSign } from "react-feather";
 
-import { LI, UL, Image, P } from "../../../AbstractElements";
+import { LI, UL, P } from "../../../AbstractElements";
 import CustomizerContext from "../../../_helper/Customizer";
 import { useDispatch, useSelector } from "react-redux";
 // import { Link } from "react-router-dom";
@@ -12,8 +12,9 @@ import { ToastContainer, toast } from "react-toastify";
 const UserHeader = () => {
   // const token = useSelector((state) => state.auth.token);
   const token = JSON.parse(localStorage.getItem("token"));
+  const profile = JSON.parse(localStorage.getItem("Profile"));
   const username = useSelector((state) => state.auth.UserName);
-  const profile = useSelector((state) => state.auth.Profile);
+  // const profile = useSelector((state) => state.auth.Picture);
   const dispatch = useDispatch();
 
   const history = useNavigate();
@@ -44,18 +45,21 @@ const UserHeader = () => {
   const UserMenuRedirect = (redirect) => {
     history(redirect);
   };
-  if (!token) {
+  useEffect(() => {
+     if (!token) {
     history(`${process.env.PUBLIC_URL}/login`);
   }
+  }, [token])
+  console.log(profile)
+  
+ 
   return (
     <li className="profile-nav onhover-dropdown pe-0 py-0">
       <div className="media profile-media">
-        <Image
-          attrImage={{
-            className: "b-r-10 m-0",
-            src: `${authenticated ? profile : profile}`,
-            alt: "",
-          }}
+        <img 
+            className= {"b-r-10 m-0 profile_p1"}
+            src={authenticated ? profile : profile}
+            alt= ""
         />
         <div className="media-body">
           <span>{authenticated ? username : username}</span>

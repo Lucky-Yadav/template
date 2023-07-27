@@ -54,12 +54,15 @@ const Signin = () => {
       data: verifyuser,
     })
       .then((res) => {
-        dispatch(sucessLogin(res.data));
-        let token = res.data.token;
+        dispatch(sucessLogin(res.data.user));
+        let token = res.data.Token;
         //store the login data in localstorage
         // console.log(res.data);
+        let profile = res.data.user.Picture
+        console.log(profile)
         localStorage.setItem("token", JSON.stringify(token));
         localStorage.setItem("login", JSON.stringify(true));
+        localStorage.setItem("profile", JSON.stringify(true));
         history(`${process.env.PUBLIC_URL}/dashboard/default/Seoul`);
         // <Navigate to={"/dashboard/default/Seoul"} />;
 
@@ -77,8 +80,8 @@ const Signin = () => {
       .post("/users/verify/token")
       .then((res) => {
         // Handle the response and redirect to the dashboard
-        console.log(res);
-        dispatch(sucessLogin(res.data));
+        // console.log(res);
+        dispatch(sucessLogin(res.data.user));
         console.log(res);
         localStorage.setItem("login", JSON.stringify(true));
         // <Navigate to={"/dashboard/default/Seoul"} />;
