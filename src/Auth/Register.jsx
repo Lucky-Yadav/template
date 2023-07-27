@@ -149,6 +149,7 @@ const RegisterFrom = () => {
         setotp_sent(true);
         setloginData((prev) => ({
           ...prev,
+          // eslint-disable-line
           ["email"]: res.data.email,
         }));
         toast.success(res.data.message);
