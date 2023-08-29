@@ -19,7 +19,7 @@ function LoginCallback() {
         let profile = userData.Picture
         console.log(profile)
         localStorage.setItem("Profile", JSON.stringify(profile));
-        localStorage.setItem("token", JSON.stringify(token));
+        localStorage.setItem("Token", JSON.stringify(token));
         localStorage.setItem("login", JSON.stringify(true));
 
   // Redirect to the dashboard page programmatically

@@ -60,7 +60,7 @@ const Signin = () => {
         // console.log(res.data);
         let profile = res.data.user.Picture
         console.log(profile)
-        localStorage.setItem("token", JSON.stringify(token));
+        localStorage.setItem("Token", JSON.stringify(token));
         localStorage.setItem("login", JSON.stringify(true));
         localStorage.setItem("profile", JSON.stringify(true));
         history(`${process.env.PUBLIC_URL}/dashboard/default/Seoul`);

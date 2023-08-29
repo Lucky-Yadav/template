@@ -67,8 +67,8 @@ th {
     }
   }
   th {
-    color: $table-heading-color;
-    font-weight: 500;
+    color: #747489;
+    font-weight: 450;
   }
   td {
     color: $table-row-color;
@@ -175,9 +175,118 @@ th {
     border-left: 0;
   }
 }
+.table-responsiv {
+  padding: 25px;
+  padding-top: 0;
+}
+tbody tr:last-child {
+    border-bottom: 0;
+}
+.rounded-cell {
+  border-radius: 10px;
+  padding: 5px 10px 5px 0;
+  /* Adjust the values as needed */
+}
 .table-dashed {
-  border-left: 2px dashed #dee2e6;
-  border-right: 2px dashed #dee2e6;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.header-table {
+  width: auto;
+  table-layout: fixed;
+}
+
+.data-table {
+  width: auto;
+  margin-left: 60px;
+  /* Adjust this value to match the width of the "Status" cell */
+  table-layout: fixed;
+}
+
+.table-dashed th,
+.table-dashed td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #dee2e6;
+}
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 3;
+}
+
+.sticky-cell {
+  position: sticky;
+  left: 0;
+  background-color: #fff;
+  z-index: 3;
+}
+.sticky-keyword {position: sticky;
+  left: 0;
+  background-color: #fff;
+  z-index: 4;
+}
+
+.table-scroll-container {
+  max-height: 400px;
+  overflow: auto;
+}
+/* Add this CSS to your existing stylesheet */
+
+/* Customize the scrollbar track */
+.table-scroll-container::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background-color: #f5f5f5;
+}
+
+/* Customize the scrollbar thumb */
+.table-scroll-container::-webkit-scrollbar-thumb {
+  background-color: #a8a8a8;
+  border-radius: 5px;
+}
+
+/* Change the thumb color when hovered */
+.table-scroll-container::-webkit-scrollbar-thumb:hover {
+  background-color: #747489;
+  border-radius: 5px;
+}
+.conversion_table {
+  display: flex;
+  justify-content: space-between;
+}
+.conversion_table_columns {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 10%;
+  font-weight: 500;
+  height: auto;
+}
+.conversions {
+  font-weight: 400;
+}
+.row_widgets {
+  // max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+@media (min-width: 1400px) {
+    .row_widgets {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+.table-dashed {
+  // border-left: 2px dashed #dee2e6;
+  // border-right: 2px dashed #dee2e6;
+  // margin: 30px;
   thead,
   tbody,
   tfoot,
@@ -188,6 +297,7 @@ th {
     border-width: 2px;
     border-right: 0;
     border-left: 0;
+    border-top: 0;
   }
 }
 //Sizing class

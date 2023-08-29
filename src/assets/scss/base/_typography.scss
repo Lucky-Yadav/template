@@ -87,6 +87,12 @@ blockquote {
     position: relative;
   }
 }
+.custom-col {
+  flex-basis: calc(20% - 10px);
+  /* Adjust width based on your design */
+  margin: 5px;
+  /* Adjust margin for spacing */
+}
 
 :focus {
   outline-color: $all-focus-outline-color;

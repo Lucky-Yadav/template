@@ -29,7 +29,7 @@
             gap: 10px;
             justify-content: space-between;
             @media (max-width:1660px) {
-                flex-wrap: wrap;
+                flex-wrap: unset;
             }
             @media (max-width:575px) {
                 flex-wrap: unset;
@@ -58,17 +58,18 @@
         color: $theme-body-font-color;
         padding: 15px;
         border-radius: 10px;
-        width: 115px;
-        @media (max-width:1660px) and (min-width: 1200px) {
-            display: none;
-        }
+        width: max-content;
+        // @media (max-width:1660px) and (min-width: 1200px) {
+        //     display: none;
+        // }
         @media (max-width: 1199px) {
-            width: 100%;
+            width: 70%;
         }
         @media (max-width: 575px) {
-           width: 50%; 
+           width: 40%; 
         }
     }
+        
     &.widget-currency {
         .card {
             .card-body {

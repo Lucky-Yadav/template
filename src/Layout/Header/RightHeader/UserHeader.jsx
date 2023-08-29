@@ -11,7 +11,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 const UserHeader = () => {
   // const token = useSelector((state) => state.auth.token);
-  const token = JSON.parse(localStorage.getItem("token"));
+  const token = JSON.parse(localStorage.getItem("Token"));
   const profile = JSON.parse(localStorage.getItem("Profile"));
   const username = useSelector((state) => state.auth.UserName);
   // const profile = useSelector((state) => state.auth.Picture);
@@ -35,7 +35,7 @@ const UserHeader = () => {
     localStorage.removeItem("Name");
     localStorage.setItem("authenticated", false);
     localStorage.removeItem("logindata");
-    localStorage.removeItem("token");
+    localStorage.removeItem("Token");
     dispatch(logoutsuccess());
     setAuthenticated(false);
     toast.success("Logged out!");

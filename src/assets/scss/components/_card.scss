@@ -14,7 +14,10 @@
     box-shadow: $card-hover-box-shadow;
     transition: all 0.3s ease;
   }
-
+  .table_card_headera {
+    padding: 25px;
+    padding-bottom: 0;
+  }
   .card-header {
     background-color: $card-header-bg-color;
     padding: $card-padding;
@@ -189,6 +192,7 @@
     margin-bottom: -13px;
   }
 }
+
 
 .custom-card {
   overflow: hidden;

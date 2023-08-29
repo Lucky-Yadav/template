@@ -3,7 +3,7 @@ import { Col, Row } from 'reactstrap';
 
 import DiscoverCard from './DiscoverCard';
 import MonthlyProfits from './MonthlyProfits';
-import OrderOverview from './OrderOverview';
+// import OrderOverview from './OrderOverview';
 import OrderThisMonth from './OrderThisMonth';
 import RecentOrders from './RecentOrders';
 import ValuableCustomer from './ValuableCustomer';
@@ -25,7 +25,7 @@ const LeftGrid = () => {
           <MonthlyProfits />
         </Col>
         <Col xxl='9' className='box-col-12'>
-          <OrderOverview />
+          {/* <OrderOverview /> */}
         </Col>
         <Col xxl='3' xl='4' sm='6' className='box-col-6 wow zoomIn'>
           <DiscoverCard />
