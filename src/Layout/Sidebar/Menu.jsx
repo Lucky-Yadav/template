@@ -46,20 +46,21 @@ export const MENUITEMS = [
       {
         title: "Integrations",
         icon: "widget",
-        type: "sub",
+        type: "link",
         active: false,
-        children: [
-          {
-            path: `${process.env.PUBLIC_URL}/widgets/general`,
-            title: "General",
-            type: "link",
-          },
-          {
-            path: `${process.env.PUBLIC_URL}/widgets/chart`,
-            title: "Chart",
-            type: "link",
-          },
-        ],
+        path: `${process.env.PUBLIC_URL}/integrations`,
+        // children: [
+        //   {
+        //     path: `${process.env.PUBLIC_URL}/widgets/general`,
+        //     title: "General",
+        //     type: "link",
+        //   },
+        //   {
+        //     path: `${process.env.PUBLIC_URL}/widgets/chart`,
+        //     title: "Chart",
+        //     type: "link",
+        //   },
+        // ],
       },
       {
         title: "Billing",

@@ -63,6 +63,7 @@ const DonutCharts = () => {
               </CardBody>
             </Card>
           </Col>
+          
         </Fragment>
 
         // ))}

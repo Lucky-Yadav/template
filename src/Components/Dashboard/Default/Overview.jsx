@@ -151,25 +151,6 @@ const Overview = () => {
         <AdGroup />
         <Ads />
         <Keywords />
-        <Row>
-          <Col xxl="3" xl="5" md="6" className="col-ed-5 box-col-5">
-            {/* <ConversionForm /> */}
-          </Col>
-          <Col xxl="4" xl="7" md="6" className="col-ed-7 box-col-7">
-            <ActivityHours />
-          </Col>
-        </Row>
-        {/* </Col> */}
-        {/* <GreetingCar/ /> */}
-        {/* <WidgetsWrapper /> */}
-        {/* <OverallBalance /> */}
-        {/* <RecentOrders />
-          <ActivityCard />
-          <RecentSales />
-          <TimelineCard /> */}
-        {/* <PreAccountCard />
-          <TotalUserAndFollower />
-          <PaperNote /> */}
       </Row>
     </Container>
   );

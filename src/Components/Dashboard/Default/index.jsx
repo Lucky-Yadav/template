@@ -1,5 +1,5 @@
 import React, { Fragment, useContext, useState} from "react";
-import { Breadcrumbs } from "../../../AbstractElements";
+import { Breadcrumbs, LI, UL } from "../../../AbstractElements";
 import Overview from "./Overview";
 import Audience from "./Audience";
 import { Route, Routes } from "react-router-dom";
@@ -10,6 +10,12 @@ import H3 from "../../../CommonElements/Headings/H3Element";
 import CustomizerContext from "../../../_helper/Customizer";
 import SvgIcon from "../../../Components/Common/Component/SvgIcon";
 import { Divider } from "@mui/material";
+import Sorting from "./Sorting";
+import CamaignName from "./Sorting/CamaignName";
+import Account from "./Sorting/Account";
+import TimePeriod from "./Sorting/TimePeriod";
+import CamaignType from "./Sorting/CampaignType";
+import Status from "./Sorting/Status";
 
 const Dashboard = () => {
   
@@ -20,25 +26,27 @@ const Dashboard = () => {
     <Fragment>
       <Container fluid={true}>
         <div className="page-title">
-          <Row>
-            <Col xs="6">
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+            }}
+          >
+            <div>
               <H3>Google Ads Dashboard</H3>
-            </Col>
-            <Col xs="6">
-              <ol className="breadcrumb">
-                <li className="breadcrumb-item">
-                  <Link
-                    to={`${process.env.PUBLIC_URL}/dashboard/default/${layoutURL}`}
-                  >
-                    <SvgIcon iconId="stroke-home" />
-                  </Link>
-                </li>
-                <li className="breadcrumb-item">Dashboard</li>
-
-                <li className="breadcrumb-item active">Default</li>
-              </ol>
-            </Col>
-          </Row>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "flex-end",
+                gap: "20px",
+                paddingRight: "20px",
+              }}
+            >
+              <Account />
+              <TimePeriod />
+            </div>
+          </div>
           <Divider
             variant="middle"
             style={{
@@ -47,7 +55,13 @@ const Dashboard = () => {
               borderColor: "#b3b3b3",
             }}
           />
-          <Row>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
             <div style={{ display: "flex", gap: "10px", padding: "10px" }}>
               <h3
                 style={{
@@ -83,11 +97,32 @@ const Dashboard = () => {
                 Audience
               </h6>
             </div>
-            <div></div>
-          </Row>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "flex-end",
+                gap: "20px",
+                paddingRight: "20px",
+              }}
+            >
+              <h6
+                style={{
+                  marginTop: "auto",
+                  marginBottom: "auto",
+                  verticalAlign: "middle",
+                  marginRight: "10px",
+                }}
+              >
+                Filters
+              </h6>
+              <CamaignName />
+              <CamaignType />
+              <Status />
+            </div>
+          </div>
         </div>
       </Container>
-      
+
       {DashboardType === "Overview" ? <Overview /> : <Audience />}
     </Fragment>
   );

@@ -179,6 +179,7 @@ import FormSwitchContain from "../Components/Forms/FormWidget/FormSwitch";
 import FormTouchspinContain from "../Components/Forms/FormWidget/FormTouchspin";
 import FormClipboardContain from "../Components/Forms/FormWidget/FormClipboard";
 import FAQContent from "../Components/FAQ";
+import Integrations from "../Components/Integration";
 // import FooterFixed from '../Components/PageLayout/FooterFixed';
 
 export const routes = [
@@ -206,13 +207,17 @@ export const routes = [
 
   // // //widgets
   {
-    path: `${process.env.PUBLIC_URL}/widgets/general/:layout`,
-    Component: <General />,
+    path: `${process.env.PUBLIC_URL}/integrations/:layout`,
+    Component: <Integrations />,
   },
-  {
-    path: `${process.env.PUBLIC_URL}/widgets/chart/:layout`,
-    Component: <Chart />,
-  },
+  // {
+  //   path: `${process.env.PUBLIC_URL}/widgets/general/:layout`,
+  //   Component: <General />,
+  // },
+  // {
+  //   path: `${process.env.PUBLIC_URL}/widgets/chart/:layout`,
+  //   Component: <Chart />,
+  // },
 
   // // //page-layout
   // { path: `${process.env.PUBLIC_URL}/page-layout/footer-light/:layout`, Component: <FooterLight /> },
